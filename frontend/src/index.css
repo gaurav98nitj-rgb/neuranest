@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Dark theme base ─── */
+body {
+  background: #0E2F44;
+  color: #D6EAF8;
+}
+
+/* ─── Card utility ─── */
+.card {
+  background: #133B55;
+  border: 1px solid #1E5570;
+  border-radius: 0.75rem;
+}
+
+/* ─── Form controls (dark) ─── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  background: #0E2F44;
+  border: 1px solid #1E5570;
+  color: #D6EAF8;
+  border-radius: 0.5rem;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #5DADE280;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #2E86C1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(46, 134, 193, 0.25);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0E2F44; }
+::-webkit-scrollbar-thumb { background: #1E5570; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2E86C1; }
+
+/* ─── Table overrides ─── */
+table { border-collapse: collapse; }
+thead { background: #0E2F44; }
+tbody tr { border-bottom: 1px solid #1E557040; }
+tbody tr:hover { background: #133B5580; }

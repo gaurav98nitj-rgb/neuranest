@@ -45,23 +45,23 @@ interface TopicItem {
 
 // --- Color Palette ---
 const COLORS = {
-  bg: '#0F1117',
-  card: '#1A1D2B',
-  cardHover: '#222639',
-  border: '#2A2D3E',
-  accent: '#6C5CE7',
-  accentLight: '#A29BFE',
+  bg: '#0E2F44',
+  card: '#133B55',
+  cardHover: '#184A68',
+  border: '#1E5570',
+  accent: '#2E86C1',
+  accentLight: '#5DADE2',
   emerald: '#00D2A0',
   amber: '#FDCB6E',
   rose: '#FD79A8',
   blue: '#0984E3',
-  text: '#E4E6EF',
+  text: '#D6EAF8',
   textMuted: '#8B8FA3',
   textDim: '#5A5E73',
 };
 
 const STAGE_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
-  emerging: { bg: 'rgba(108,92,231,0.15)', text: '#A29BFE', dot: '#6C5CE7' },
+  emerging: { bg: 'rgba(108,92,231,0.15)', text: '#5DADE2', dot: '#2E86C1' },
   exploding: { bg: 'rgba(253,121,168,0.15)', text: '#FD79A8', dot: '#E84393' },
   peaking: { bg: 'rgba(253,203,110,0.15)', text: '#FDCB6E', dot: '#F39C12' },
   declining: { bg: 'rgba(99,110,114,0.15)', text: '#8B8FA3', dot: '#636E72' },
@@ -70,8 +70,8 @@ const STAGE_COLORS: Record<string, { bg: string; text: string; dot: string }> = 
 };
 
 const CATEGORY_COLORS = [
-  '#6C5CE7', '#00D2A0', '#FD79A8', '#FDCB6E', '#0984E3',
-  '#E17055', '#00CEC9', '#A29BFE', '#FAB1A0', '#81ECEC',
+  '#2E86C1', '#00D2A0', '#FD79A8', '#FDCB6E', '#0984E3',
+  '#E17055', '#00CEC9', '#5DADE2', '#FAB1A0', '#81ECEC',
 ];
 
 // --- Sparkline Component ---
