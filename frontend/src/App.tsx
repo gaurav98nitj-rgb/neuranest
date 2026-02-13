@@ -4,10 +4,11 @@ import Layout from './components/Layout'
 import LandingPage from './pages/LandingPage'
 import DashboardPage from './pages/DashboardPage'
 import ExplorerPage from './pages/ExplorerPage'
-import CategoryExplorerPage from './pages/CategoryExplorerPage'
 import TopicDetailPage from './pages/TopicDetailPage'
+import CategoryExplorerPage from './pages/CategoryExplorerPage'
 import WatchlistPage from './pages/WatchlistPage'
 import AlertsPage from './pages/AlertsPage'
+import SettingsPage from './pages/SettingsPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/topics/:id" element={<TopicDetailPage />} />
         <Route path="/watchlist" element={<WatchlistPage />} />
         <Route path="/alerts" element={<AlertsPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Route>
 
       {/* Fallback */}

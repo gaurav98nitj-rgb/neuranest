@@ -1,14 +1,14 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../lib/store'
-import { Eye, Bell, Search, LogOut, BarChart3, LayoutDashboard, Grid3X3, TrendingUp } from 'lucide-react'
+import { Eye, Bell, Search, LogOut, BarChart3, LayoutDashboard, Grid3X3, Settings } from 'lucide-react'
 import clsx from 'clsx'
 
 const navItems = [
-  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { to: '/explore', label: 'Explorer', icon: Search },
-  { to: '/categories', label: 'Categories', icon: Grid3X3 },
-  { to: '/watchlist', label: 'Watchlist', icon: Eye },
-  { to: '/alerts', label: 'Alerts', icon: Bell },
+  { to: '/dashboard',  label: 'Dashboard',   icon: LayoutDashboard },
+  { to: '/explore',    label: 'Explorer',     icon: Search },
+  { to: '/categories', label: 'Categories',   icon: Grid3X3 },
+  { to: '/watchlist',  label: 'Watchlist',    icon: Eye },
+  { to: '/alerts',     label: 'Alerts',       icon: Bell },
 ]
 
 export default function Layout() {
@@ -17,32 +17,30 @@ export default function Layout() {
 
   const handleLogout = () => {
     logout()
-    navigate('/')
+    navigate('/auth/login')
   }
 
   return (
-    <div className="flex h-screen bg-surface">
-      <aside className="w-64 bg-surface-1 border-r border-line flex flex-col">
+    <div className="flex h-screen bg-srf">
+      <aside className="w-64 bg-srf-1 border-r border-ln text-white flex flex-col">
         <div className="p-6 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
-            <TrendingUp className="h-5 w-5 text-white" />
-          </div>
+          <BarChart3 className="h-8 w-8 text-brand-400" />
           <div>
-            <h1 className="text-lg font-bold text-white" style={{ fontFamily: "'Instrument Sans', 'DM Sans', sans-serif", letterSpacing: '-0.02em' }}>NeuraNest</h1>
-            <p className="text-[10px] text-brand-400 uppercase tracking-wider">Trend Intelligence</p>
+            <h1 className="text-lg font-bold text-white">NeuraNest</h1>
+            <p className="text-xs text-brand-500">Trend Intelligence</p>
           </div>
         </div>
-        <nav className="flex-1 px-3 mt-2 space-y-1">
+        <nav className="flex-1 px-3 mt-4 space-y-1">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 clsx(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150',
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
                   isActive
-                    ? 'bg-brand-500/20 text-brand-300 border border-brand-500/25'
-                    : 'text-brand-200/60 hover:bg-surface-2 hover:text-brand-200 border border-transparent'
+                    ? 'bg-brand-700 text-brand-200'
+                    : 'text-brand-300 hover:bg-brand-800 hover:text-brand-200'
                 )
               }
             >
@@ -51,19 +49,35 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
-        <div className="p-4 border-t border-line">
+        <div className="px-3 mb-2">
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              clsx(
+                'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+                isActive
+                  ? 'bg-brand-700 text-brand-200'
+                  : 'text-brand-400 hover:bg-brand-800 hover:text-brand-300'
+              )
+            }
+          >
+            <Settings className="h-5 w-5" />
+            Settings
+          </NavLink>
+        </div>
+        <div className="p-4 border-t border-ln">
           <div className="flex items-center justify-between">
             <div className="text-sm min-w-0">
-              <p className="font-medium text-brand-200 truncate">{user?.email || 'User'}</p>
-              <p className="text-brand-400/60 text-xs capitalize">{user?.role || 'viewer'}</p>
+              <p className="font-medium truncate text-brand-200">{user?.email || 'User'}</p>
+              <p className="text-brand-500 text-xs capitalize">{user?.role || 'viewer'}</p>
             </div>
-            <button onClick={handleLogout} className="text-brand-400/60 hover:text-brand-300 p-1.5 rounded-lg hover:bg-surface-2 transition-colors">
+            <button onClick={handleLogout} className="text-brand-500 hover:text-brand-300 p-1 transition-colors">
               <LogOut className="h-4 w-4" />
             </button>
           </div>
         </div>
       </aside>
-      <main className="flex-1 overflow-auto bg-surface">
+      <main className="flex-1 overflow-auto">
         <Outlet />
       </main>
     </div>

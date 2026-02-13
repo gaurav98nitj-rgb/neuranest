@@ -9,16 +9,13 @@ export default {
           400: '#5DADE2', 500: '#2E86C1', 600: '#2874A6', 700: '#1B4F72',
           800: '#154360', 900: '#0E2F44',
         },
-        surface: {
-          DEFAULT: '#0E2F44',  // main bg (brand-900)
-          1: '#133B55',        // card bg
-          2: '#184A68',        // card hover / elevated
-          3: '#1D5A7C',        // active / selected
-        },
-        line: {
-          DEFAULT: '#1E5570',  // borders
-          light: '#245F7A',    // hover borders
-        },
+        // Dark theme surface colors
+        'srf': '#0E2F44',
+        'srf-1': '#133B55',
+        'srf-2': '#184A68',
+        'srf-3': '#1D5A7C',
+        'ln': '#1E5570',
+        'ln-lt': '#245F7A',
       },
     },
   },
